@@ -2,6 +2,7 @@ import useLocalStorage from './hooks/useLocalStorage'
 import Dashboard from './components/Dashboard'
 import Login from "./components/Login"
 import { ContactsProvider } from './contexts/ContactsProvider'
+import { ConversationsProvider } from './contexts/ConversationsProvider'
 
 const App = () => {
 
@@ -9,7 +10,9 @@ const App = () => {
 
   const dashboard = (
     <ContactsProvider>
-      <Dashboard id={id} />
+      <ConversationsProvider>
+        <Dashboard id={id} />
+      </ConversationsProvider>
     </ContactsProvider>
   )
 
